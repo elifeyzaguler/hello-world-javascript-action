@@ -1,0 +1,22 @@
+name: 02 - Checkout + Script
+
+on: push
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Try running script without checkout
+        run: ./scripts/hello.sh
+        shell: bash
+        continue-on-error: true
+
+      - uses: actions/checkout@v5
+
+      - name: Make executable
+        run: chmod +x ./scripts/hello.sh
+        shell: bash
+
+      - name: Run script
+        run: ./scripts/hello.sh
+        shell: bash
