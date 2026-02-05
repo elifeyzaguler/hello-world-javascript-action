@@ -1,9 +1,6 @@
 name: 01 - Trigger basics
 
-on: 
-    push:
-    pull_request:
-    workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
     show_context:

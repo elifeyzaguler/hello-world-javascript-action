@@ -1,0 +1,16 @@
+name: 05 - Cache
+on: workflow_dispatch
+jobs:
+  node_cache:
+    name: Caching
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm test --if-present
