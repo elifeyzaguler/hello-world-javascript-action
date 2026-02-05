@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: elifeyzaguler/hello-world-javascript-action@26e42bcf00d8e94ebecfd8400249283d5af3f770
+        uses: elifeyzaguler/hello-world-javascript-action@94229e0efcca774f3356216d536610f46f673be6
         with: 
           who-to-greet: Elif Feyza
 
