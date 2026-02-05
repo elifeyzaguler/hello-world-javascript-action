@@ -1,0 +1,14 @@
+name: 03 - Outputs
+on: workflow_dispatch
+jobs:
+  outputs_demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate random
+        id: gen
+        shell: bash
+        run: echo "random-number=$RANDOM" >> "$GITHUB_OUTPUT"
+
+      - name: Use output
+        shell: bash
+        run: echo "Random number was ${{ steps.gen.outputs.random-number }}"    
