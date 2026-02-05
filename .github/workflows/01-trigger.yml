@@ -16,3 +16,11 @@ jobs:
                 echo "sha: $GITHUB_SHA"
                 echo "actor: $GITHUB_ACTOR"
               shell: bash
+
+    print_random_number:
+        runs-on: ubuntu-latest
+        steps:
+            - name: random-number-generator
+              run: echo $RANDOM
+              shell: bash  
+        
