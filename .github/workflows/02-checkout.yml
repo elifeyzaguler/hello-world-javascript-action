@@ -1,6 +1,6 @@
 name: 02 - Checkout + Script
 
-on: push
+on: workflow_dispatch
 
 jobs:
   run_script:

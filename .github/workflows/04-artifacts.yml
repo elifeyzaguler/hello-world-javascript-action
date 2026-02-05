@@ -1,0 +1,18 @@
+name: 04 - Artifacts
+on: workflow_dispatch
+jobs:
+  make_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create report
+        shell: bash
+        run: |
+          mkdir -p out
+          echo "run at $(date)" > out/report.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-report
+          path: out/report.txt
+
+  
