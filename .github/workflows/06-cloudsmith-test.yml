@@ -13,14 +13,15 @@ jobs:
         uses: cloudsmith-io/cloudsmith-cli-action@v2
         with:
           oidc-audience: "https://github.com/elifeyzaguler"   # only if your provider expects this audience
+          oidc-namespace: 'elifeyza' # Your Cloudsmith Workspace
+          oidc-service-slug: 'github-actions-7dyp' # Your Cloudsmith service account slug
+          oidc-auth-only: 'true' # Ensures the action only performs authentication
 
       
       # - name: Authenticate with Cloudsmith via OIDC
       #   uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
       #   with:
-      #     oidc-namespace: 'elifeyza' # Your Cloudsmith Workspace
-      #     oidc-service-slug: 'github-actions-7dyp' # Your Cloudsmith service account slug
-      #     oidc-auth-only: 'true' # Ensures the action only performs authentication
+          
 
       - name: Create test file
         shell: bash
