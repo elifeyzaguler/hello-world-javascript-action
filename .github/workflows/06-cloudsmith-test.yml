@@ -1,0 +1,24 @@
+name: 06 - Cloudsmith OIDC Smoke Test
+on: workflow_dispatch 
+permissions: 
+  contents: read
+  id-token: write
+jobs: 
+  push_raw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      
+      - name: Setup Cloudsmith CLI (OIDC)
+        uses: cloudsmith-io/cloudsmith-cli-action@v2
+      
+      - name: Create test file
+        shell: bash
+        run: |
+          mkdir -p dist
+          echo "hello from github actions at $(date)" > dist/hello.txt
+
+      - name: Push to cloudsmith (raw)
+        shell: bash
+        run: |
+          cloudsmith push raw elifeyza/my-first-repo dist/hello.txt
