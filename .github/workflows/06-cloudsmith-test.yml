@@ -27,5 +27,4 @@ jobs:
 
       - name: Push to cloudsmith (raw)
         shell: bash
-        run: |
-          cloudsmith push raw elifeyza/my-first-repo dist/hello.txt
+        run: cloudsmith push raw elifeyza/my-first-repo dist/hello.txt
