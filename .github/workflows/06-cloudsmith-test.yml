@@ -16,7 +16,7 @@ jobs:
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
         with:
           oidc-namespace: 'elifeyza' # Your Cloudsmith Workspace
-          oidc-service-slug: 'github-actions' # Your Cloudsmith service account slug
+          oidc-service-slug: 'github-actions-7dyp' # Your Cloudsmith service account slug
           oidc-auth-only: 'true' # Ensures the action only performs authentication
 
       - name: Create test file
