@@ -9,9 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       
-      - name: Setup Cloudsmith CLI (OIDC)
-        uses: cloudsmith-io/cloudsmith-cli-action@v2
+      #- name: Setup Cloudsmith CLI (OIDC)
+       # uses: cloudsmith-io/cloudsmith-cli-action@v2
       
+      - name: Authenticate with Cloudsmith via OIDC
+        uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
+        with:
+          oidc-namespace: 'elifeyza' # Your Cloudsmith Workspace
+          oidc-service-slug: 'github-actions' # Your Cloudsmith service account slug
+          oidc-auth-only: 'true' # Ensures the action only performs authentication
+
       - name: Create test file
         shell: bash
         run: |
