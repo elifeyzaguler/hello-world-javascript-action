@@ -21,7 +21,12 @@ jobs:
       # - name: Authenticate with Cloudsmith via OIDC
       #   uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
       #   with:
-          
+      - name: Install Cloudsmith CLI
+        shell: bash
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install cloudsmith-cli
+          cloudsmith --version
 
       - name: Create test file
         shell: bash
